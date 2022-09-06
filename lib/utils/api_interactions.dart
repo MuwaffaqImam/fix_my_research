@@ -14,6 +14,7 @@ Future<AnalyzedText> sendToIExtract(String text, [String? filename]) async {
   final headers = {
     "accept": "application/json",
     "Content-Type": "application/json"
+
   };
   final body = jsonEncode({"text": text});
   final response = await http.post(uri, headers: headers, body: body);
