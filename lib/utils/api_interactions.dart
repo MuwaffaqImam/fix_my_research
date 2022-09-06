@@ -4,13 +4,20 @@ import 'package:http/http.dart' as http;
 import '../utils/pdf_reader.dart';
 import 'package:file_picker/file_picker.dart';
 
+// please don't use this API in development
+String _liveAPI = "https://aqueous-anchorage-93443.herokuapp.com/FixMyEnglish";
+
+// use the mock API for faster development good for UI
 String _mockAPI = "https://mock-api-for-fix-my-english.herokuapp.com";
-String _moofiyAPI = "https://aqueous-anchorage-93443.herokuapp.com/FixMyEnglish";
+
+// use the development API only for testing.
+String _developmentAPI = "https://iextract-new-api.herokuapp.co/FixMyEnglish";
+
 String _localHost = "http://127.0.0.1:8000/FixMyEnglish";
 
 ///API call function
 Future<AnalyzedText> sendToIExtract(String text, [String? filename]) async {
-  final uri = Uri.parse(_moofiyAPI);
+  final uri = Uri.parse(_developmentAPI);
   final headers = {
     "accept": "application/json",
     "Content-Type": "application/json"
@@ -20,7 +27,7 @@ Future<AnalyzedText> sendToIExtract(String text, [String? filename]) async {
   final response = await http.post(uri, headers: headers, body: body);
   if (response.statusCode != 200) {
     //Sending request to mock API
-    final uriMock = Uri.parse("$_moofiyAPI");
+    final uriMock = Uri.parse("$_liveAPI");
     final responseMock = await http.post(uriMock, headers: headers, body: body);
     if (responseMock.statusCode != 200) {
       return Future.error("Everything is ruined. No one respond.");
