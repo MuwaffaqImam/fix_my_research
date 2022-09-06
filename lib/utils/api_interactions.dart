@@ -17,7 +17,7 @@ String _localHost = "http://127.0.0.1:8000/FixMyEnglish";
 
 ///API call function
 Future<AnalyzedText> sendToIExtract(String text, [String? filename]) async {
-  final uri = Uri.parse(_developmentAPI);
+  final uri = Uri.parse(_mockAPI);
   final headers = {
     "accept": "application/json",
     "Content-Type": "application/json"
