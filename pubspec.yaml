@@ -1,0 +1,50 @@
+name: swp
+description: Software project(from SWP course)
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.1 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  syncfusion_flutter_pdf: ^20.1.58-beta
+  flutter_svg: ^1.1.0
+  http: 0.13.4
+
+  cupertino_icons: ^1.0.2
+  file_picker: ^4.6.1
+  cloud_firestore: ^3.1.18
+  firebase_core: ^1.18.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  test:
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/
+
+  fonts:
+    - family: Eczar
+      fonts:
+        - asset: fonts/Eczar/Eczar-Bold.ttf
+        - asset: fonts/Eczar/Eczar-ExtraBold.ttf
+        - asset: fonts/Eczar/Eczar-Medium.ttf
+        - asset: fonts/Eczar/Eczar-Regular.ttf
+        - asset: fonts/Eczar/Eczar-SemiBold.ttf
+    - family: Merriweather
+      fonts:
+        - asset: fonts/Merriweather/Merriweather-Black.ttf
+        - asset: fonts/Merriweather/Merriweather-Bold.ttf
+        - asset: fonts/Merriweather/Merriweather-Light.ttf
+        - asset: fonts/Merriweather/Merriweather-Regular.ttf
+          weight: 700
